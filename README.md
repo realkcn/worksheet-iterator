@@ -1,16 +1,20 @@
 # worksheet-iterator
 
-`worksheet-iterator` 提供一个基于 XlsxWriter 的 `WorkSheetIterator` 类，用于以链式方式在工作表中写入和格式化单元格。
+[English](README.md) | [中文](README.zh_CN.md)
 
-## 安装
+`worksheet-iterator` provides a `WorkSheetIterator` class based on XlsxWriter, which lets you write and format cells in a worksheet with chainable calls.
+
+## English
+
+### Installation
 
 ```bash
 pip install worksheet-iterator
 ```
 
-## 使用示例
+### Usage example
 
-下面的示例与仓库根目录下的 `demo.py` 一致，展示了如何使用 `WorkSheetIterator` 在工作表中链式写入数据：
+The following example is the same as `demo.py` in the repository root. It shows how to use `WorkSheetIterator` to write data to a worksheet in a chainable way:
 
 ```python
 from worksheet_iterator import WorkSheetIterator
@@ -19,18 +23,18 @@ import xlsxwriter
 
 wb = xlsxwriter.Workbook("demo.xlsx")
 
-# 创建一个工作表迭代器，指向 Sheet1
+# Create a worksheet iterator that points to "Sheet1"
 it = WorkSheetIterator(wb, "Sheet1")
 
-# 在第一个单元格写入 "ok"，然后移动到下一列写入 42
+# Write "ok" to the first cell, then move to the next column and write 42
 it.set_value("ok").next_column().set_value(42)
 
 wb.close()
 ```
 
-## 主要特性
+### Key features
 
-- 基于 XlsxWriter 的工作表写入工具
-- 支持链式调用（如 `set_value().next_column().set_value()`）
-- 更易于组织和维护复杂的 Excel 写入逻辑
+- Utility for writing Excel worksheets based on XlsxWriter
+- Supports chainable calls (such as `set_value().next_column().set_value()`)
+- Makes it easier to organize and maintain complex Excel writing logic
 
