@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 import xlsxwriter
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Tuple, Optional, Union
 
 
 class WorkSheetIterator:
@@ -477,7 +479,7 @@ class WorkSheetIterator:
         new_format = self.wb.add_format(new_format_props)
         return new_format
 
-    def get_cell_ref(self, row_or_tuple: int | tuple = None, col: int = None) -> str:
+    def get_cell_ref(self, row_or_tuple: Optional[Union[int, Tuple[int, int]]] = None, col: Optional[int] = None) -> str:
         if row_or_tuple is not None and isinstance(row_or_tuple, tuple):
             row = row_or_tuple[0]
             col = row_or_tuple[1]

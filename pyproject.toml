@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "worksheet-iterator"
-version = "0.1.0"
+version = "0.1.1"
 description = "A chainable worksheet iterator utility based on XlsxWriter."
 requires-python = ">=3.9"
 dependencies = [
@@ -12,14 +12,14 @@ dependencies = [
 ]
 
 authors = [
-  { name = "zhoulin" },
+  { name = "realkcn" },
 ]
 
 readme = "README.md"
 license = { text = "MIT" }
 
 [project.urls]
-Homepage = "https://github.com/yourname/worksheet-iterator"
+Homepage = "https://github.com/realkcn/worksheet-iterator"
 
 [tool.hatch.build.targets.wheel]
 packages = ["ws_utils"]
